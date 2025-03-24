@@ -74,7 +74,73 @@ When presenting text, you might want to ensure it follows certain case conventio
 title = "welcome to the python tutorial"
 formatted_title = title.upper()
 print(formatted_title)  # Output: "WELCOME TO THE PYTHON TUTORIAL"
+Certainly! Here are three string methods in Python, along with their explanations and examples:
 
+▎1. str.strip()
+
+The str.strip() method removes any leading and trailing whitespace characters from a string.
+
+Syntax:
+
+str.strip()
+
+
+Returns:
+
+• A new string with leading and trailing whitespace removed.
+
+Example:
+
+original_string = "   Hello, World!   "
+stripped_string = original_string.strip()
+print(stripped_string)  # Output: "Hello, World!"
+
+
+---
+
+▎2. str.replace()
+
+The str.replace(old, new) method returns a new string where all occurrences of the substring old are replaced with the substring new.
+
+Syntax:
+
+str.replace(old, new)
+
+
+Returns:
+
+• A new string with all occurrences of old replaced by new.
+
+Example:
+
+original_string = "Hello, World!"
+replaced_string = original_string.replace("World", "Python")
+print(replaced_string)  # Output: "Hello, Python!"
+
+
+---
+
+▎3. str.split()
+
+The str.split(sep=None) method splits a string into a list of substrings based on a specified separator (delimiter). If no separator is specified, it splits on any whitespace.
+
+Syntax:
+
+str.split(sep=None)
+
+
+Returns:
+
+• A list of substrings.
+
+Example:
+
+original_string = "Hello, World! Welcome to Python."
+split_string = original_string.split(" ")
+print(split_string)  # Output: ['Hello,', 'World!', 'Welcome', 'to', 'Python.']
+
+
+These three methods (strip, replace, and split) provide essential functionality for manipulating and processing strings in Python.
 
 ▎Text Data Processing
 
