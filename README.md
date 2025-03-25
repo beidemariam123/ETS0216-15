@@ -1,4 +1,4 @@
-ntroduction
+introduction
 
 In Python, strings are a core data type that support a variety of operations and modifications. Among these operations, converting strings to upper or lower case is a frequent task. Python offers built-in methods for these conversions: str.upper() and str.lower(). This README will detail how to utilize these methods, complete with examples and practical applications.
 
