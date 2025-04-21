@@ -227,3 +227,76 @@ Example:
 
     print(colors)  # Output: ['red', 'yellow', 'green', 'blue']
 
+ # fourth commit
+
+1. remove()
+
+The remove() method is used to delete the first occurrence of a specified value from a list. If the value is not found, it raises a ValueError.
+
+Purpose:
+
+• To remove an item from a list by its value.
+
+How It Works:
+
+1. The method searches for the first occurrence of the specified value in the list.
+
+2. If found, it removes that item from the list.
+
+3. If the value is not present, it raises an error.
+
+Example:
+
+    # Example of using remove()
+      fruits = ['apple', 'banana', 'cherry', 'banana']
+      print("Original list:", fruits)
+
+    # Remove 'banana' from the list
+      fruits.remove('banana')
+      print("List after removing 'banana':", fruits)
+
+    # Attempting to remove a non-existent item
+      try:
+      fruits.remove('orange')
+      except ValueError as e:
+      print("Error:", e)  # Will print an error message
+
+
+2. pop()
+
+The pop() method removes and returns an item at a specified index. If no index is provided, it removes and returns the last item in the list. If the list is empty, it raises an IndexError.
+
+Purpose:
+
+• To retrieve and remove an item from a list by its index.
+
+How It Works:
+
+1. The method checks if an index is provided; if not, it defaults to the last item.
+
+2. It removes the item at the specified index and returns it.
+
+3. If the index is out of range or the list is empty, it raises an error.
+
+Example:
+
+    # Example of using pop()
+      numbers = [10, 20, 30, 40]
+      print("Original list:", numbers)
+
+    # Pop the last item
+      last_item = numbers.pop()
+      print("Popped item:", last_item)
+      print("List after popping last item:", numbers)
+
+    # Pop item at index 1
+      second_item = numbers.pop(1)
+      print("Popped item at index 1:", second_item)
+      print("List after popping item at index 1:", numbers)
+
+    # Attempting to pop from an empty list
+      empty_list = []
+      try:
+      empty_list.pop()
+      except IndexError as e:
+      print("Error:", e)  # Will print an error message
