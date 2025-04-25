@@ -1,13 +1,8 @@
-# Example of using remove()
-fruits = ['apple', 'banana', 'cherry', 'banana']
-print("Original list:", fruits)
+    my_set = {1, 2, 3}
+    my_set.remove(2)
+    print(my_set)  # Output: {1, 3}
 
-# Remove 'banana' from the list
-fruits.remove('banana')
-print("List after removing 'banana':", fruits)
-
-# Attempting to remove a non-existent item
-try:
-    fruits.remove('orange')
-except ValueError as e:
-    print("Error:", e)  # Will print an error message
+    try:
+        my_set.remove(4)  # Raises KeyError
+    except KeyError:
+        print("Element not found")
