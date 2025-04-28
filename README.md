@@ -316,3 +316,88 @@
     set2 = {3, 4, 5, 6}
     set1 &= set2
     print(set1) #{3, 4, 5}
+
+# fourth commit (set methods)
+
+13. set.difference_update(*others) or set -= other | ...
+
+•  Explanation: The difference_update() method modifies the original set by removing the elements that are present in any of the other sets. You can also use the -= operator as a shorthand.
+
+•  Purpose: To efficiently remove multiple elements from a set based on the contents of other sets.
+
+•  How it Works:
+
+  1. The method iterates through the elements of each other set.
+  2. For each element in the other set, the method attempts to remove it from the original set.
+  3. Because discard() is used internally, no KeyError is raised if an element is not found.
+  4. The original set is modified directly.
+
+•  Example (Python):
+
+    set1 = {1, 2, 3, 4, 5}
+    set2 = {3, 4, 5, 6}
+    set3 = {5, 6, 7}
+
+    set1.difference_update(set2, set3)
+    print(set1)  # Output: {1, 2}
+
+    set1 = {1, 2, 3, 4, 5}
+    set2 = {3, 4, 5, 6}
+    set1 -= set2
+    print(set1) # {1, 2}
+
+14. set.isdisjoint()
+
+•  Purpose: To determine if two sets have no elements in common.
+
+•  How it works: The isdisjoint() method returns True if the sets are disjoint (i.e., they do not share any elements), and False otherwise.
+
+•  Example:
+    set_a = {1, 2, 3}
+    set_b = {4, 5, 6}
+    set_c = {3, 4, 5} 
+
+    print(set_a.isdisjoint(set_b))  # Output: True
+    print(set_a.isdisjoint(set_c))  # Output: False
+
+15. set.issubset()
+
+•  Purpose: To check if all elements of one set are contained within another set.
+
+•  How it works: The issubset() method returns True if the first set is a subset of the second set, meaning every element in the first set is also in the second set. Otherwise, it returns False.
+
+•  Example:
+    set_a = {1, 2}
+    set_b = {1, 2, 3, 4}
+
+    print(set_a.issubset(set_b))  # Output: True
+    print(set_b.issubset(set_a))  # Output: False
+
+
+16. set.issuperset()
+
+•  Purpose: To determine if one set contains all elements of another set.
+
+•  How it works: The issuperset() method returns True if the first set is a superset of the second set, indicating that every element in the second set exists in the first set. Otherwise, it returns False.
+
+•  Example:
+    set_a = {1, 2, 3, 4}
+    set_b = {2, 3}
+
+    print(set_a.issuperset(set_b))  # Output: True
+    print(set_b.issuperset(set_a))  # Output: False
+
+
+17. set.symmetric_difference_update()
+
+•  Purpose: To update a set with the symmetric difference of itself and another set.
+
+•  How it works: The symmetric_difference_update() method modifies the original set to contain only elements that are in either of the sets but not in both. This means it removes any elements that are present in both sets.
+
+•  Example:
+    set_a = {1, 2, 3}
+    set_b = {3, 4, 5}
+
+    set_a.symmetric_difference_update(set_b)
+    print(set_a)  # Output: {1, 2, 4, 5}
+
