@@ -1,114 +1,45 @@
-# first commit (dictionary methods)
+# first commit (tuple methods)
+1. count(value)
 
-1. dict.clear()
+• Purpose: The count() method is used to determine how many times a specific value appears in a tuple.
 
-•  Purpose: Removes all items from the dictionary.
+• Syntax:
+tuple.count(value)
 
-•  Example:
+• value: The value you want to count in the tuple.
 
-    my_dict = {'a': 1, 'b': 2}
-    my_dict.clear()
-    # my_dict is now {}
+• Return Value: This method returns an integer representing the number of occurrences of the specified value.
 
-2. dict.copy()
+Example:
+    my_tuple = (1, 2, 3, 2, 4)
 
-•  Purpose: Returns a shallow copy of the dictionary.
+    # Count how many times '2' appears in the tuple
+    count_of_two = my_tuple.count(2)  
+    print(count_of_two)  # Output: 2
 
-•  Example:
+    # Count how many times '5' appears in the tuple
+    count_of_five = my_tuple.count(5)  
+    print(count_of_five)  # Output: 0
 
-    my_dict = {'a': 1, 'b': 2}
-    new_dict = my_dict.copy()
-    # new_dict is {'a': 1, 'b': 2}
+2. index(value[, start[, end]])
 
-3. dict.fromkeys(iterable, value=None)
+• Purpose: The index() method is used to find the first occurrence of a specified value within a tuple. You can also specify optional start and end indices to limit the search to a specific section of the tuple.
 
-•  Purpose: Creates a new dictionary from the given iterable, with keys from the iterable and values set to the specified value (default is None).
+• Syntax:
+tuple.index(value[, start[, end]])
 
-•  Example:
+• value: The value you want to find the index of.
 
-    keys = ['a', 'b', 'c']
-    new_dict = dict.fromkeys(keys, 0)
-    # new_dict is {'a': 0, 'b': 0, 'c': 0}
+• Return Value: This method returns the index of the first occurrence of the specified value. If the value is not found, it raises a ValueError.
 
-4. dict.get(key, default=None)
+Example:
+    my_tuple = (1, 2, 3, 2, 4)
 
-•  Purpose: Returns the value for the specified key if it exists; otherwise, returns the default value.
+    # Find the index of the first occurrence of '3'
+    index_of_three = my_tuple.index(3)  
+    print(index_of_three)  # Output: 2
 
-•  Example:
-
-    my_dict = {'a': 1, 'b': 2}
-    value = my_dict.get('c', 0)  # Returns 0 since 'c' is not in the dictionary
-
-5. dict.items()
-
-•  Purpose: Returns a view object that displays a list of a dictionary's key-value tuple pairs.
-
-•  Example:
-
-    my_dict = {'a': 1, 'b': 2}
-    items = my_dict.items()  # Returns dict_items([('a', 1), ('b', 2)])
-
-6. dict.keys()
-
-•  Purpose: Returns a view object that displays a list of all the keys in the dictionary.
-
-•  Example:
-
-    my_dict = {'a': 1, 'b': 2}
-    keys = my_dict.keys()  # Returns dict_keys(['a', 'b'])
-
-7. dict.pop(key, default=None)
-
-•  Purpose: Removes the specified key and returns its value. If the key is not found, it returns the default value if provided; otherwise, it raises a KeyError.
-
-•  Example:
-
-    my_dict = {'a': 1, 'b': 2}
-    value = my_dict.pop('a')  # value is 1; my_dict is now {'b': 2}
-
-8. dict.popitem()
-
-•  Purpose: Removes and returns an arbitrary (key, value) pair from the dictionary. Raises KeyError if the dictionary is empty.
-
-•  Example:
-
-    my_dict = {'a': 1, 'b': 2}
-    item = my_dict.popitem()  # item could be ('a', 1) or ('b', 2)
-
-9. dict.update([other])
-
-•  Purpose: Updates the dictionary with elements from another dictionary or from an iterable of key-value pairs.
-
-•  Example:
-
-    my_dict = {'a': 1}
-    my_dict.update({'b': 2, 'c': 3})
-    # my_dict is now {'a': 1, 'b': 2, 'c': 3}
-
-10. dict.values()
-
-•  Purpose: Returns a view object that displays a list of all the values in the dictionary.
-
-•  Example:
-
-    my_dict = {'a': 1, 'b': 2}
-    values = my_dict.values()  # Returns dict_values([1, 2])
-
-11. dict. setdefault()
-
-•  Purpose: The setdefault() method in Python dictionaries is used to retrieve the value of a specified key. If the key does not exist, it inserts the key with a specified default value. This method is useful for initializing dictionary keys without having to check if they already exist.
-
-•  Example
-
-# List of items
-items = ['apple', 'banana', 'orange', 'apple', 'orange', 'banana', 'banana']
-
-# Counting occurrences using setdefault()
-item_count = {}
-for item in items:
-    item_count.setdefault(item, 0)  # Initialize count to 0 if not present
-    item_count[item] += 1            # Increment the count
-
-print(item_count)  # Output: {'apple': 2, 'banana': 3, 'orange': 2}
-
+    # Find the index of '2', starting the search from index 3
+    index_of_two_after_index_3 = my_tuple.index(2, 3)  
+    print(index_of_two_after_index_3)  # Output: ValueError, because '2' does not appear after index 3
 
